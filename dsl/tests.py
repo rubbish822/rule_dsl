@@ -58,7 +58,7 @@ def test_flow_and_in():
     """
     text = 'select * from table_name'
     rule = MysqlDSL(string, text)
-    assert rule.match_tree() == False
+    assert rule.match_tree() is False
     assert rule.end_msg == (False, "'只能执行查询语句'")
 
 
@@ -73,7 +73,7 @@ def test_flow_and():
     """
     text = 'select * from table_name2'
     rule = MysqlDSL(string, text)
-    assert rule.match_tree() == True
+    assert rule.match_tree() is True
 
 
 def test_flow_and_more():
@@ -101,7 +101,7 @@ def test_flow_and_in_notin():
     """
     text = 'select * from table_name4'
     rule = MysqlDSL(string, text)
-    assert rule.match_tree() == True
+    assert rule.match_tree() is True
 
 
 def test_flow_only():
@@ -161,7 +161,7 @@ def test_flow_or():
     """
     text = 'select * from table_name4'
     rule = MysqlDSL(string, text)
-    assert rule.match_tree() == True
+    assert rule.match_tree() is True
 
 
 def test_white():

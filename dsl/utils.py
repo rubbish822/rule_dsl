@@ -2,6 +2,8 @@ import functools
 import inspect
 import typing
 
+from .dsl import BaseCommonDSL, BaseDSL
+
 
 def fac(
     title: str = '',
@@ -159,7 +161,6 @@ def collect_register_fat(dsl_imports: list) -> list:
     Returns:
         list: [{'name': '@fac.user_is_admin', 'title': 'user_is_admin', 'description': 'user_is_admin', 'func_type': 'fac', 'type': 'redis', 'enabled': True}]
     """
-    from .dsl import BaseCommonDSL, BaseDSL
 
     for dsl_import in dsl_imports:
         __import__(dsl_import)
